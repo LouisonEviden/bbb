@@ -10,15 +10,13 @@ jobs:
       id-token: write
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/dbt-labs/dbt-core:1.9.3
+      image: ghcr.io/dbt-labs/dbt-snowflake:1.9.latest
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - run: dbt deps
-      - run: python -m pip install dbt-adapters
-      - run: python -m pip install dbt-snowflake
       - run: python -m pip install elementary-data
       - run: python -m pip install 'elementary-data[snowflake]'
       - run: dbt debug
