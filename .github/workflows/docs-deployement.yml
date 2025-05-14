@@ -26,7 +26,7 @@ jobs:
         env:
           SNOW_PASSWORD: ${{ secrets.SNOW_PASSWORD }}
       - run: edr --help
-      - run: edr report --profiles-dir ./profiles.yml
+      - run: edr report --profiles-dir ./profiles.yml --profile-target elementary
         env:
           SNOW_PASSWORD: ${{ secrets.SNOW_PASSWORD }}
       - run: sed -i 's|Docs|DBT Docs|g' elementary_report.html
