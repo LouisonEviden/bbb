@@ -22,6 +22,7 @@ jobs:
       - run: dbt docs generate --target dev
         env:
           SNOW_PASSWORD: ${{ secrets.SNOW_PASSWORD }}
+      - run: dbt test
       - run: edr report
       - run: sed -i 's|Docs|DBT Docs|g' elementary_report.html
       - run: sed -i 's|https://docs.elementary-data.com/introduction|./index.html|g'
