@@ -1,0 +1,26 @@
+sap-order-to-cash:
+  target: dev
+  outputs:
+    dev:
+      account: "xm94285.eu-west-1"
+      database: "SSI_SAP_TO_SNOW"
+      role: "ROLE_DATA_ENGINEER"
+      schema: REPORT
+      threads: 32
+      type: snowflake
+      user: "SAP2SNOW_ENGINEER"
+      password: "{{ env_var('SNOW_PASSWORD') }}"
+      warehouse: MIGRATION_BIGQUERY
+      query_tag: "DBT_WORK_SSI"
+elementary:
+  outputs:
+    default:
+      type: "snowflake"
+      account: "xm94285.eu-west-1"
+      user: "SAP2SNOW_ENGINEER"
+      password: "{{ env_var('SNOW_PASSWORD') }}"
+      role: "ROLE_DATA_ENGINEER"
+      warehouse: "MIGRATION_BIGQUERY"
+      database: "SSI_SAP_TO_SNOW"
+      schema: "ELEMENTARY"
+      threads: 32

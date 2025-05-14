@@ -1,0 +1,8 @@
+target/
+logs/
+.venv/
+.user.yml
+.history/
+dbt_packages/
+edr_target/
+package-lock.yml
