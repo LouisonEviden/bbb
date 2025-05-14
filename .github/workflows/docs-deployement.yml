@@ -21,6 +21,7 @@ jobs:
       - run: python -m pip install dbt-snowflake
       - run: python -m pip install elementary-data
       - run: python -m pip install 'elementary-data[snowflake]'
+      - run: dbt debug
       - run: dbt docs generate --target dev
         env:
           SNOW_PASSWORD: ${{ secrets.SNOW_PASSWORD }}
