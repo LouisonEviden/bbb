@@ -25,6 +25,7 @@ jobs:
       - run: dbt test
         env:
           SNOW_PASSWORD: ${{ secrets.SNOW_PASSWORD }}
+      - run: cat ./profiles.yml
       - run: edr report --profiles-dir ./profiles.yml
         env:
           SNOW_PASSWORD: ${{ secrets.SNOW_PASSWORD }}
