@@ -32,7 +32,7 @@ jobs:
           cp target/index.html docs
           cp target/manifest.json docs
           cp target/catalog.json docs
-          cp edr_target/elementary_outpus.json docs
+          cp edr_target/elementary_output.json docs
           cp edr_target/elementary_report.html docs
       - uses: actions/upload-pages-artifact@v3
         with:
